@@ -1,0 +1,169 @@
+<!--
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/home_333333@81x81.png",
+        "selectedIconPath": "images/home_3cc51f@81x81.png",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "images/mine_333333@81x81.png",
+        "selectedIconPath": "images/mine_3cc51f@81x81.png",
+        "text": "我的"
+      }
+    ]
+  }
+-->
+<view class="page">
+    <view class="page__bd">
+         
+    <view class="index" wx:if="{{!isLogin}}">
+
+      <view class="index-profile">
+        <view 
+            wx:if="{{ profile.avatarUrl }}" 
+            class="index-profile__img" 
+            style="background-image: url('{{profile.avatarUrl}}')"
+        >
+        </view>
+        <view wx:else class="index-profile__img-hold">暂无头像</view>
+          <!-- 
+        <view wx:if="{{ profile.nickName }}" class="index-profile__nickname">{{ profile.nickName }}</view>     
+        <view wx:else class="index-profile__nickname">暂无名字</view> -->
+      </view>
+      <view class='index-btn' >
+        <button
+          class="weui-btn mini-btn"
+          bindtap="goToLogin"
+          type="primary"
+          size="mini"
+        >
+          登录
+        </button>
+      </view >
+    </view>
+  <view wx:if="{{isLogin}}">
+   <view class="weui-panel weui-panel_access"  >
+      <view class="weui-panel__bd" bindtap="goToPerson">
+          <navigator  class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" >
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                  <image class="weui-media-box__thumb" src="{{profile.avatarUrl}}" />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__title">{{profile.nickName}}</view>
+                  <view class="weui-media-box__desc">{{profile.province}}</view>
+              </view>
+          </navigator>  
+      </view>
+    </view> 
+    <view class="page__bd" >
+      <view class="weui-cells__title">带跳转的列表项</view>
+      <view class="weui-cells weui-cells_after-title">
+          <navigator url="/pages/index/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+              <view class="weui-cell__bd">cell standard</view>
+              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </navigator>
+          <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+              <view class="weui-cell__bd">cell standard</view>
+              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </navigator>
+      </view>
+
+      <view class="weui-cells__title">带跳转的列表项</view>
+      <view class="weui-cells weui-cells_after-title">
+          <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+              <view class="weui-cell__bd">cell standard</view>
+              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </navigator>
+          <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+              <view class="weui-cell__bd">cell standard</view>
+              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </navigator>
+          <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+              <view class="weui-cell__bd">cell standard</view>
+              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </navigator>
+      </view>
+    </view>
+  </view>
+  <!-- 
+  <view class="index-title">
+    {{ title }}
+  </view>
+
+  <view class="index-books">
+    <view class="index-books__showLayer">.
+      <view class="index-books__item" wx:for="{{ bookList }}" wx:key="{{ index }}">
+        <view class="index-books__title">书目：</view>
+        <view class="index-books__controls--show" wx:if="{{ !item.isEditing }}">{{ item.bookName }}</view>
+         <view class="index-books__controls--edit-area" wx:else>
+          <input
+            type="text"
+            value="{{ item.bookName }}"
+            confirm-type="完成"
+            data-book-id="{{ item.id }}"
+            bindinput="bindEditBookNameInput"
+          />
+        </view> 
+        <button 
+          wx:if="{{ !item.isEditing }}"
+          class="index-books__controls--edit-btn btn"
+          type="primary"
+          data-book-id="{{ item.id }}"
+          data-index="{{index}}"
+          bindtap="editBookButtonClicked"
+        >
+          编辑
+        </button>
+
+        <button
+          wx:else
+          class="index-books__controls--edit-btn btn"
+          type="primary"
+          data-book-id="{{ item.id }}"
+          data-index="{{index}}"
+          bindtap="updateBook"
+        >
+          保存
+        </button>
+
+        <button
+          class="index-books__controls--delete btn"
+          type="warn"
+          data-book-id="{{ item.id }}"
+          bindtap="deleteBook"
+        >
+          删除
+        </button>
+      </view>
+    </view>
+
+    <view class="index-books__input">
+      <input
+        type="text"
+        placeholder="输入书名"
+        value="{{buf_val}}"
+        confirm-type="完成"
+        bindinput="bindCreateBookNameInput"
+      />
+    </view>
+    <view class="index-books__controls">
+      <button
+        class="index-books__controls--create"
+        bindtap="createBook"
+        type="primary"
+      >
+        添加
+      </button>
+    </view> 
+
+  </view>-->
+
+</view>
+</view>

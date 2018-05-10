@@ -1,0 +1,55 @@
+<view class="profile">
+  <view class='form'>
+
+    <view class='form-cell'>
+      <text class='form-cell-title'>手机</text>
+      <input
+        placeholder="请填写您的手机号"
+        placeholder-class='form-cell-ph'
+        class='form-cell-input'
+        confirm-type='next'
+        data-cell='1'
+        type='number'
+        bindinput='input_phone'
+        maxlength='11'
+        ></input>
+    </view>
+    <view class='form-cell'>
+      <text class='form-cell-title'>密码</text>
+      <input
+        placeholder="请填写您的密码"
+        placeholder-class='form-cell-ph'
+        class='form-cell-input'
+        confirm-type='next'
+        auto-height='true'
+        password='true'
+        bindinput='input_pswd'
+      ></input>
+    </view>
+    
+    <!-- <view class='form-cell'>
+      <text class='form-cell-title'>公司</text>
+      <textarea
+        placeholder="请填写您所在的公司"
+        placeholder-class='form-cell-ph'
+        class='form-cell-input'
+        confirm-type='done'
+        data-cell='2'
+        auto-height='true'
+        bindinput='input_company'
+        value='{{company}}'></textarea>
+    </view> -->
+  </view>
+
+
+  <view class='index-btn'>
+    <button
+      class="weui-btn sub-btn"
+      bindtap="submit"
+      type="primary"
+    >
+      登录
+    </button>
+  </view>
+
+</view>
